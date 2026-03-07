@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Teaching — Bruce Bimber</title>
+  <title>Contact — Bruce Bimber</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -73,13 +73,13 @@
       flex: 1;
       max-width: var(--max);
       margin: 0 auto;
-      padding: 3rem 2rem 3rem;
+      padding: 5rem 2rem 6rem;
       width: 100%;
     }
 
     /* ── PAGE HEADER ── */
     .page-header {
-      margin-bottom: 1.2rem;
+      margin-bottom: 3rem;
     }
     .page-header h1 {
       font-family: 'Playfair Display', serif;
@@ -94,67 +94,67 @@
       color: var(--accent);
     }
 
-    /* ── INTRO ── */
-    .intro {
-      color: var(--muted);
-      max-width: 640px;
-      margin-bottom: 1.8rem;
-    }
-
-    /* ── SECTION ── */
-    h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 400;
-      margin-bottom: 0.8rem;
-      color: var(--text);
-    }
-
-    hr.section-rule {
-      border: none;
-      border-top: 1px solid var(--rule);
-      margin: 1.8rem 0;
-    }
-
-    /* ── COURSE LIST ── */
-    .course-list {
+    /* ── CONTACT DETAILS ── */
+    .contact-details {
       display: flex;
       flex-direction: column;
-      gap: 0.7rem;
+      gap: 0.6rem;
+      margin-bottom: 3.5rem;
     }
-    .course-item {
+    .contact-row {
       display: grid;
-      grid-template-columns: 90px 1fr;
+      grid-template-columns: 130px 1fr;
       gap: 1rem;
-      align-items: baseline;
+      font-size: 0.98rem;
     }
-    .course-number {
+    .contact-label {
       font-size: 0.82rem;
       font-weight: 600;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--accent);
-      white-space: nowrap;
-    }
-    .course-title {
-      font-size: 0.98rem;
-      color: var(--text);
-    }
-
-    /* ── CANVAS NOTE ── */
-    .canvas-note {
-      margin-top: 3rem;
-      padding: 1.4rem 1.6rem;
-      border-left: 2px solid var(--rule);
-      font-size: 0.92rem;
       color: var(--muted);
-      max-width: 600px;
+      padding-top: 0.15rem;
     }
-    .canvas-note a {
+    .contact-value a {
       color: var(--accent);
       text-decoration: none;
     }
-    .canvas-note a:hover { text-decoration: underline; }
+    .contact-value a:hover { text-decoration: underline; }
+
+    /* ── DIVIDER ── */
+    hr.section-rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 3rem 0;
+    }
+
+    /* ── CAMPUS LINKS ── */
+    .campus-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .campus-link-item {
+      font-size: 0.95rem;
+    }
+    .campus-link-item a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .campus-link-item a:hover { text-decoration: underline; }
+    .campus-link-item .link-note {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-left: 0.4rem;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-bottom: 1.2rem;
+      color: var(--text);
+    }
 
     /* ── FOOTER ── */
     footer {
@@ -169,10 +169,7 @@
 
     @media (max-width: 600px) {
       .nav-links { gap: 1.2rem; }
-      .course-item {
-        grid-template-columns: 1fr;
-        gap: 0.2rem;
-      }
+      .contact-row { grid-template-columns: 1fr; gap: 0.1rem; }
     }
   </style>
 </head>
@@ -184,9 +181,9 @@
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="research.html">Research</a></li>
-        <li><a href="teaching.html" class="active">Teaching</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
         <li><a href="students.html">Students</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -194,55 +191,35 @@
   <main>
 
     <div class="page-header">
-      <p class="sub">Teaching</p>
-      <h1>Courses</h1>
+      <p class="sub">Contact</p>
+      <h1>Get in Touch</h1>
     </div>
 
-    <p class="intro">
-      All my courses are administered through UCSB's course management system. 
-      I generally do not distribute traditional syllabi in PDF form; current 
-      enrolled students will find all course materials in 
-      <a href="https://www.canvas.ucsb.edu/" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none;">Canvas</a>.
-    </p>
-
-    <section>
-      <h2>Undergraduate Courses</h2>
-      <div class="course-list">
-        <div class="course-item">
-          <span class="course-number">PS 12</span>
-          <span class="course-title">American Government and Politics</span>
-        </div>
-        <div class="course-item">
-          <span class="course-number">PS 172</span>
-          <span class="course-title">Political Communication in the US</span>
-        </div>
-        <div class="course-item">
-          <span class="course-number">PS 178</span>
-          <span class="course-title">Democracy and the Internet</span>
-        </div>
+    <div class="contact-details">
+      <div class="contact-row">
+        <span class="contact-label">Email</span>
+        <span class="contact-value"><a href="mailto:bimber@ucsb.edu">bimber@ucsb.edu</a></span>
       </div>
-    </section>
+      <div class="contact-row">
+        <span class="contact-label">Office</span>
+        <span class="contact-value">3708 Ellison Hall, UC Santa Barbara</span>
+      </div>
+    </div>
 
     <hr class="section-rule" />
 
     <section>
-      <h2>Graduate Courses</h2>
-      <div class="course-list">
-        <div class="course-item">
-          <span class="course-number">PS 211</span>
-          <span class="course-title">Research Workshop for PhD Students</span>
+      <h2>Finding Campus</h2>
+      <div class="campus-links">
+        <div class="campus-link-item">
+          <a href="https://www.google.com/maps/place/Ellison+Hall,+Isla+Vista,+CA+93117/@34.4159136,-119.8468467,17z" target="_blank" rel="noopener">Ellison Hall on Google Maps</a>
         </div>
-        <div class="course-item">
-          <span class="course-number">PS 266</span>
-          <span class="course-title">Contemporary Problems in Research on American Government</span>
+        <div class="campus-link-item">
+          <a href="https://www.ucsb.edu/atoz/map-interactive-campus-map" target="_blank" rel="noopener">Interactive Campus Map</a>
+          <span class="link-note">— parking and building locations</span>
         </div>
-        <div class="course-item">
-          <span class="course-number">PS 267</span>
-          <span class="course-title">Political Communication</span>
-        </div>
-        <div class="course-item">
-          <span class="course-number">PS 596</span>
-          <span class="course-title">Directed Reading: Advanced Topics in Political Communication</span>
+        <div class="campus-link-item">
+          <a href="https://gauchocast.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=73d57e89-3d00-4855-a537-ae62013896a6&start=0" target="_blank" rel="noopener">Drone Tour of Campus</a>
         </div>
       </div>
     </section>
