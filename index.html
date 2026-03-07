@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bruce Bimber — Distinguished Professor, UC Santa Barbara</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #f7f5f2;
+      --text:      #1e1e1e;
+      --muted:     #5a5a5a;
+      --accent:    #2a5f8f;
+      --rule:      #d8d2c8;
+      --max:       860px;
+    }
+
+    html { font-size: 17px; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── NAV ── */
+    header {
+      border-bottom: 1px solid var(--rule);
+      padding: 0 2rem;
+    }
+    nav {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .site-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--accent); }
+
+    /* ── MAIN ── */
+    main {
+      flex: 1;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 5rem 2rem 6rem;
+      width: 100%;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 200px;
+      gap: 3.5rem;
+      align-items: start;
+      margin-bottom: 4rem;
+    }
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 0.35rem;
+    }
+    .hero-text .title-line {
+      font-size: 0.9rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2rem;
+    }
+    .hero-text p {
+      color: var(--muted);
+      margin-bottom: 1.1rem;
+      max-width: 580px;
+    }
+    .hero-photo img {
+      width: 100%;
+      max-width: 200px;
+      display: block;
+      filter: grayscale(8%);
+      border-radius: 2px;
+    }
+
+    /* ── DIVIDER ── */
+    hr.section-rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 3.5rem 0;
+    }
+
+    /* ── AFFILIATIONS ── */
+    .affiliations h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-bottom: 1.2rem;
+    }
+    .affiliations ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .affiliations a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: opacity 0.2s;
+    }
+    .affiliations a:hover { opacity: 0.7; }
+
+    /* ── LINKEDIN NOTE ── */
+    .social-note {
+      margin-top: 2.5rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .social-note a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .social-note a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 1.5rem 2rem;
+      text-align: center;
+      font-size: 0.78rem;
+      color: #aaa;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .hero-photo {
+        order: -1;
+      }
+      .hero-photo img {
+        max-width: 140px;
+      }
+      .nav-links { gap: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a class="site-name" href="index.html">Bruce Bimber</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="students.html">Students</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Bruce Bimber</h1>
+        <p class="title-line">Distinguished Professor &nbsp;·&nbsp; UC Santa Barbara</p>
+        <p>
+          Welcome. I am on the faculty at UC Santa Barbara in the Department of Political Science,
+          with a courtesy appointment in the Department of Communication. I am also affiliated with
+          the Center for Responsible Machine Learning.
+        </p>
+        <p>
+          The overarching theme of my research is how people's behavior is affected by digital media.
+          My current work examines democratically corrosive content in social media, using large language
+          models as an analytic tool, and comparative survey data from the US and Europe to understand
+          relationships among media use, psychological traits, and anti-democratic sentiment.
+        </p>
+        <p>
+          I came to this work by an indirect path: an undergraduate degree in electrical engineering
+          from Stanford, some years in Silicon Valley, a doctorate in political science from MIT, and
+          a stint at RAND writing about education and technology policy. I have been on the faculty
+          at UC Santa Barbara since the mid-1990s. I am a Fellow of the American Association for the
+          Advancement of Science and of the International Communication Association, and a past Fellow
+          of the Center for Advanced Study in the Behavioral Sciences.
+        </p>
+
+        <p class="social-note">
+          I can be found on <a href="https://www.linkedin.com/in/bruce-bimber-4a603264/" target="_blank" rel="noopener">LinkedIn</a>.
+          I use other social media strictly for personal contact with friends.
+        </p>
+      </div>
+
+      <div class="hero-photo">
+        <!-- Replace the src below with your actual photo file name once uploaded to GitHub -->
+        <img src="photo.jpg" alt="Bruce Bimber" />
+      </div>
+    </section>
+
+    <hr class="section-rule" />
+
+    <section class="affiliations">
+      <h2>Affiliations</h2>
+      <ul>
+        <li><a href="http://polsci.ucsb.edu" target="_blank" rel="noopener">Department of Political Science, UC Santa Barbara</a></li>
+        <li><a href="https://www.comm.ucsb.edu" target="_blank" rel="noopener">Department of Communication, UC Santa Barbara</a></li>
+        <li><a href="http://www.cits.ucsb.edu" target="_blank" rel="noopener">Center for Information Technology &amp; Society</a></li>
+        <li><a href="http://ml.ucsb.edu" target="_blank" rel="noopener">Center for Responsible Machine Learning</a></li>
+        <li><a href="https://www.ucsbpolcomm.org/" target="_blank" rel="noopener">Political Communication Working Group</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Bruce Bimber &nbsp;·&nbsp;
+    Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener" style="color:#aaa;">CC BY-SA 4.0</a>
+  </footer>
+
+</body>
+</html>

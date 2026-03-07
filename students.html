@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PhD Students — Bruce Bimber</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #f7f5f2;
+      --text:      #1e1e1e;
+      --muted:     #5a5a5a;
+      --accent:    #2a5f8f;
+      --rule:      #d8d2c8;
+      --max:       860px;
+    }
+
+    html { font-size: 17px; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── NAV ── */
+    header {
+      border-bottom: 1px solid var(--rule);
+      padding: 0 2rem;
+    }
+    nav {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .site-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--accent); }
+
+    /* ── MAIN ── */
+    main {
+      flex: 1;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 5rem 2rem 6rem;
+      width: 100%;
+    }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      margin-bottom: 3rem;
+    }
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 0.3rem;
+    }
+    .page-header .sub {
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    /* ── BODY TEXT ── */
+    .content p {
+      color: var(--muted);
+      max-width: 640px;
+      margin-bottom: 1.2rem;
+    }
+
+    hr.section-rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 3rem 0;
+    }
+
+    /* ── CALLOUT ── */
+    .callout {
+      padding: 1.4rem 1.6rem;
+      border-left: 2px solid var(--accent);
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 620px;
+      margin-bottom: 2rem;
+    }
+
+    /* ── OPEN LETTER LINK ── */
+    .letter-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 1px;
+      transition: opacity 0.2s;
+    }
+    .letter-link:hover { opacity: 0.65; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 1.5rem 2rem;
+      text-align: center;
+      font-size: 0.78rem;
+      color: #aaa;
+      letter-spacing: 0.04em;
+    }
+    footer a { color: #aaa; }
+
+    @media (max-width: 600px) {
+      .nav-links { gap: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a class="site-name" href="index.html">Bruce Bimber</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="students.html" class="active">Students</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="page-header">
+      <p class="sub">Graduate Study</p>
+      <h1>PhD Students</h1>
+    </div>
+
+    <section class="content">
+      <p>
+        I typically advise about five graduate students and work with others through the
+        <a href="https://www.ucsbpolcomm.org/" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none;">Political Communication Working Group</a>.
+        My students have varied interests in political communication in the US and internationally,
+        and they generally share a focus on digital media.
+      </p>
+
+      <div class="callout">
+        I do not anticipate taking on new graduate students for the cohort entering in Fall 2026.
+      </div>
+
+      <p>
+        I occasionally host postdoctoral scholars and pre-doctoral visitors from other institutions.
+        I strongly discourage unsolicited proposals for an extended visit without any prior exchange
+        or interaction.
+      </p>
+    </section>
+
+    <hr class="section-rule" />
+
+    <section class="content">
+      <p>
+        The following is an open letter to new or prospective doctoral students about succeeding
+        in graduate school. It distills some of what I have observed about the practices and
+        attitudes of people who are most satisfied with their experience earning a PhD.
+      </p>
+      <!-- Update this href once the PDF is uploaded to GitHub -->
+      <a class="letter-link" href="grad-school-letter.pdf" target="_blank">Open Letter to PhD Students &rarr;</a>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Bruce Bimber &nbsp;·&nbsp;
+    Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>
+  </footer>
+
+</body>
+</html>
