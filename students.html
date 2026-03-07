@@ -4,149 +4,181 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PhD Students — Bruce Bimber</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;1,300&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:        #ffffff;
-      --text:      #1e1e1e;
-      --muted:     #5a5a5a;
-      --accent:    #2a5f8f;
-      --rule:      #e0e0e0;
-      --max:       860px;
+      --bg:       #ffffff;
+      --ink:      #111;
+      --muted:    #555;
+      --accent:   #3d4f3e;
+      --light:    #eaeeea;
+      --rule:     #ddd;
+      --max:      960px;
     }
 
     html { font-size: 17px; }
 
     body {
       background: var(--bg);
-      color: var(--text);
-      font-family: 'Source Sans 3', sans-serif;
-      font-weight: 400;
+      color: var(--ink);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 300;
       line-height: 1.75;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
 
-    /* ── NAV ── */
-    header {
-      border-bottom: 1px solid var(--rule);
-      padding: 0 2rem;
-    }
+    header { border-bottom: 3px solid var(--accent); padding: 0 2rem; }
     nav {
       max-width: var(--max);
       margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 64px;
+      height: 66px;
     }
     .site-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
-      font-weight: 400;
-      letter-spacing: 0.01em;
-      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
       text-decoration: none;
     }
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
+    .nav-links { display: flex; gap: 0; list-style: none; }
     .nav-links a {
-      font-size: 0.85rem;
+      font-size: 0.78rem;
       font-weight: 400;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--muted);
       text-decoration: none;
-      transition: color 0.2s;
+      padding: 0.4rem 1rem;
+      border-left: 1px solid var(--rule);
+      transition: background 0.15s, color 0.15s;
     }
-    .nav-links a:hover,
-    .nav-links a.active { color: var(--accent); }
+    .nav-links li:last-child a { border-right: 1px solid var(--rule); }
+    .nav-links a:hover, .nav-links a.active { background: var(--accent); color: #fff; }
 
-    /* ── MAIN ── */
+    .page-band { background: var(--accent); color: #fff; position: relative; overflow: hidden; }
+    .page-band::before { content: ""; position: absolute; inset: 0; background-image: url("campus-point-02.jpeg"); background-size: cover; background-position: center 40%; opacity: 0.28; z-index: 0; }
+    .page-band-inner { position: relative; z-index: 1; }
+    .page-band-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 2.5rem 2rem;
+    }
+    .page-band-inner .eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-bottom: 0.5rem;
+    }
+    .page-band-inner h1 {
+      font-family: 'Spectral', serif;
+      font-size: 2.2rem;
+      font-weight: 300;
+    }
+
     main {
       flex: 1;
       max-width: var(--max);
       margin: 0 auto;
-      padding: 5rem 2rem 6rem;
+      padding: 3.5rem 2rem 5rem;
       width: 100%;
     }
 
-    /* ── PAGE HEADER ── */
-    .page-header {
-      margin-bottom: 3rem;
+    .content-grid {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 4rem;
+      align-items: start;
     }
-    .page-header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      font-weight: 400;
-      margin-bottom: 0.3rem;
-    }
-    .page-header .sub {
-      font-size: 0.85rem;
-      letter-spacing: 0.08em;
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--accent);
-    }
-
-    /* ── BODY TEXT ── */
-    .content p {
-      color: var(--muted);
-      max-width: 640px;
       margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--light);
     }
 
-    hr.section-rule {
-      border: none;
-      border-top: 1px solid var(--rule);
-      margin: 3rem 0;
-    }
-
-    /* ── CALLOUT ── */
-    .callout {
-      padding: 1.4rem 1.6rem;
-      border-left: 2px solid var(--accent);
-      font-size: 0.95rem;
+    .body-text p {
       color: var(--muted);
-      max-width: 620px;
-      margin-bottom: 2rem;
+      margin-bottom: 1.1rem;
+      font-size: 0.97rem;
+      text-align: justify;
+      hyphens: auto;
+      -webkit-hyphens: auto;
     }
 
-    /* ── OPEN LETTER LINK ── */
+    .callout {
+      background: var(--light);
+      border-left: 3px solid var(--accent);
+      padding: 1.1rem 1.4rem;
+      font-size: 0.92rem;
+      color: var(--ink);
+      margin: 1.5rem 0;
+    }
+
+    .sidebar { display: flex; flex-direction: column; gap: 2rem; }
+    .sidebar-block { background: var(--light); padding: 1.5rem; }
+    .sidebar-block .block-title {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent);
+    }
+    .sidebar-block p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
     .letter-link {
       display: inline-block;
-      margin-top: 0.5rem;
-      font-size: 0.88rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: #fff;
+      background: var(--accent);
+      padding: 0.45rem 1rem;
       text-decoration: none;
-      border-bottom: 1px solid var(--accent);
-      padding-bottom: 1px;
       transition: opacity 0.2s;
     }
-    .letter-link:hover { opacity: 0.65; }
+    .letter-link:hover { opacity: 0.8; }
 
-    /* ── FOOTER ── */
     footer {
-      border-top: 1px solid var(--rule);
+      border-top: 3px solid var(--accent);
       padding: 1.5rem 2rem;
       text-align: center;
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       color: #aaa;
       letter-spacing: 0.04em;
     }
     footer a { color: #aaa; }
 
-    @media (max-width: 600px) {
-      .nav-links { gap: 1.2rem; }
-    }
+    @media (max-width: 680px) { .content-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -164,44 +196,39 @@
     </nav>
   </header>
 
-  <main>
-
-    <div class="page-header">
-      <p class="sub">Graduate Study</p>
+  <div class="page-band">
+    <div class="page-band-inner">
+      <p class="eyebrow">Graduate Study</p>
       <h1>PhD Students</h1>
     </div>
+  </div>
 
-    <section class="content">
-      <p>
-        I typically advise about five graduate students and work with others through the
+  <main>
+    <div class="content-grid">
+      <div class="body-text">
+        <p class="section-label">Advising</p>
+        <p>I typically advise about five graduate students and work with others through the
         <a href="https://www.ucsbpolcomm.org/" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none;">Political Communication Working Group</a>.
         My students have varied interests in political communication in the US and internationally,
-        and they generally share a focus on digital media.
-      </p>
+        and they generally share a focus on digital media.</p>
 
-      <div class="callout">
-        I do not anticipate taking on new graduate students for the cohort entering in Fall 2026.
+        <div class="callout">
+          I do not anticipate taking on new graduate students for the cohort entering in Fall 2026.
+        </div>
+
+        <p>I occasionally host postdoctoral scholars and pre-doctoral visitors from other institutions.
+        I strongly discourage unsolicited proposals for an extended visit without any prior exchange
+        or interaction.</p>
       </div>
 
-      <p>
-        I occasionally host postdoctoral scholars and pre-doctoral visitors from other institutions.
-        I strongly discourage unsolicited proposals for an extended visit without any prior exchange
-        or interaction.
-      </p>
-    </section>
-
-    <hr class="section-rule" />
-
-    <section class="content">
-      <p>
-        The following is an open letter to new or prospective doctoral students about succeeding
-        in graduate school. It distills some of what I have observed about the practices and
-        attitudes of people who are most satisfied with their experience earning a PhD.
-      </p>
-      <!-- Update this href once the PDF is uploaded to GitHub -->
-      <a class="letter-link" href="LetterFourComponents.pdf" target="_blank">Open Letter to PhD Students &rarr;</a>
-    </section>
-
+      <div class="sidebar">
+        <div class="sidebar-block">
+          <p class="block-title">Open Letter</p>
+          <p>Advice for new or prospective doctoral students on success in graduate school — distilled from years of observing what separates the most satisfied PhD students from others.</p>
+          <a class="letter-link" href="LetterFourComponents.pdf" target="_blank">Read the Letter &rarr;</a>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer>

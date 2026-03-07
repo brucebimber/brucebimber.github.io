@@ -4,175 +4,158 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Teaching — Bruce Bimber</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;1,300&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:        #ffffff;
-      --text:      #1e1e1e;
-      --muted:     #5a5a5a;
-      --accent:    #2a5f8f;
-      --rule:      #e0e0e0;
-      --max:       860px;
+      --bg:       #ffffff;
+      --ink:      #111;
+      --muted:    #555;
+      --accent:   #3d4f3e;
+      --light:    #eaeeea;
+      --rule:     #ddd;
+      --max:      960px;
     }
 
     html { font-size: 17px; }
 
     body {
       background: var(--bg);
-      color: var(--text);
-      font-family: 'Source Sans 3', sans-serif;
-      font-weight: 400;
+      color: var(--ink);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 300;
       line-height: 1.75;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
 
-    /* ── NAV ── */
-    header {
-      border-bottom: 1px solid var(--rule);
-      padding: 0 2rem;
-    }
+    header { border-bottom: 3px solid var(--accent); padding: 0 2rem; }
     nav {
       max-width: var(--max);
       margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 64px;
+      height: 66px;
     }
     .site-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
-      font-weight: 400;
-      letter-spacing: 0.01em;
-      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
       text-decoration: none;
     }
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
+    .nav-links { display: flex; gap: 0; list-style: none; }
     .nav-links a {
-      font-size: 0.85rem;
+      font-size: 0.78rem;
       font-weight: 400;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--muted);
       text-decoration: none;
-      transition: color 0.2s;
+      padding: 0.4rem 1rem;
+      border-left: 1px solid var(--rule);
+      transition: background 0.15s, color 0.15s;
     }
-    .nav-links a:hover,
-    .nav-links a.active { color: var(--accent); }
+    .nav-links li:last-child a { border-right: 1px solid var(--rule); }
+    .nav-links a:hover, .nav-links a.active { background: var(--accent); color: #fff; }
 
-    /* ── MAIN ── */
+    .page-band { background: var(--accent); color: #fff; position: relative; overflow: hidden; }
+    .page-band::before { content: ""; position: absolute; inset: 0; background-image: url("campus-point-02.jpeg"); background-size: cover; background-position: center 40%; opacity: 0.28; z-index: 0; }
+    .page-band-inner { position: relative; z-index: 1; }
+    .page-band-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 2.5rem 2rem;
+    }
+    .page-band-inner .eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-bottom: 0.5rem;
+    }
+    .page-band-inner h1 {
+      font-family: 'Spectral', serif;
+      font-size: 2.2rem;
+      font-weight: 300;
+    }
+
     main {
       flex: 1;
       max-width: var(--max);
       margin: 0 auto;
-      padding: 3rem 2rem 3rem;
+      padding: 3rem 2rem 5rem;
       width: 100%;
     }
 
-    /* ── PAGE HEADER ── */
-    .page-header {
-      margin-bottom: 1.2rem;
-    }
-    .page-header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      font-weight: 400;
-      margin-bottom: 0.3rem;
-    }
-    .page-header .sub {
-      font-size: 0.85rem;
-      letter-spacing: 0.08em;
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--accent);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--light);
     }
 
-    /* ── INTRO ── */
     .intro {
+      font-size: 0.97rem;
       color: var(--muted);
       max-width: 640px;
-      margin-bottom: 1.8rem;
+      margin-bottom: 2.5rem;
     }
+    .intro a { color: var(--accent); text-decoration: none; }
+    .intro a:hover { text-decoration: underline; }
 
-    /* ── SECTION ── */
-    h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 400;
-      margin-bottom: 0.8rem;
-      color: var(--text);
-    }
+    .course-section { margin-bottom: 2.5rem; }
 
-    hr.section-rule {
-      border: none;
-      border-top: 1px solid var(--rule);
-      margin: 1.8rem 0;
-    }
-
-    /* ── COURSE LIST ── */
-    .course-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0.7rem;
-    }
+    .course-list { display: flex; flex-direction: column; gap: 0; }
     .course-item {
       display: grid;
-      grid-template-columns: 90px 1fr;
-      gap: 1rem;
+      grid-template-columns: 80px 1fr;
+      gap: 1.2rem;
       align-items: baseline;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--rule);
     }
+    .course-item:first-child { border-top: 1px solid var(--rule); }
     .course-number {
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
       color: var(--accent);
-      white-space: nowrap;
     }
     .course-title {
-      font-size: 0.98rem;
-      color: var(--text);
+      font-size: 0.97rem;
+      color: var(--ink);
     }
 
-    /* ── CANVAS NOTE ── */
-    .canvas-note {
-      margin-top: 3rem;
-      padding: 1.4rem 1.6rem;
-      border-left: 2px solid var(--rule);
-      font-size: 0.92rem;
-      color: var(--muted);
-      max-width: 600px;
-    }
-    .canvas-note a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-    .canvas-note a:hover { text-decoration: underline; }
-
-    /* ── FOOTER ── */
     footer {
-      border-top: 1px solid var(--rule);
+      border-top: 3px solid var(--accent);
       padding: 1.5rem 2rem;
       text-align: center;
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       color: #aaa;
       letter-spacing: 0.04em;
     }
     footer a { color: #aaa; }
 
     @media (max-width: 600px) {
-      .nav-links { gap: 1.2rem; }
-      .course-item {
-        grid-template-columns: 1fr;
-        gap: 0.2rem;
-      }
+      .course-item { grid-template-columns: 1fr; gap: 0.1rem; }
     }
   </style>
 </head>
@@ -191,22 +174,23 @@
     </nav>
   </header>
 
-  <main>
-
-    <div class="page-header">
-      <p class="sub">Teaching</p>
+  <div class="page-band">
+    <div class="page-band-inner">
+      <p class="eyebrow">Teaching</p>
       <h1>Courses</h1>
     </div>
+  </div>
 
+  <main>
     <p class="intro">
-      All my courses are administered through UCSB's course management system. 
-      I generally do not distribute traditional syllabi in PDF form; current 
-      enrolled students will find all course materials in 
-      <a href="https://www.canvas.ucsb.edu/" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none;">Canvas</a>.
+      All my courses are administered through UCSB's course management system.
+      I generally do not distribute traditional syllabi in PDF form; current
+      enrolled students will find all course materials in
+      <a href="https://www.canvas.ucsb.edu/" target="_blank" rel="noopener">Canvas</a>.
     </p>
 
-    <section>
-      <h2>Undergraduate Courses</h2>
+    <div class="course-section">
+      <p class="section-label">Undergraduate Courses</p>
       <div class="course-list">
         <div class="course-item">
           <span class="course-number">PS 12</span>
@@ -221,12 +205,10 @@
           <span class="course-title">Democracy and the Internet</span>
         </div>
       </div>
-    </section>
+    </div>
 
-    <hr class="section-rule" />
-
-    <section>
-      <h2>Graduate Courses</h2>
+    <div class="course-section">
+      <p class="section-label">Graduate Courses</p>
       <div class="course-list">
         <div class="course-item">
           <span class="course-number">PS 211</span>
@@ -245,8 +227,7 @@
           <span class="course-title">Directed Reading: Advanced Topics in Political Communication</span>
         </div>
       </div>
-    </section>
-
+    </div>
   </main>
 
   <footer>
